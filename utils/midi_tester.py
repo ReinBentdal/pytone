@@ -1,7 +1,7 @@
 import threading
 import midi
 from pynput import keyboard
-from log import Log
+from utils.log import Log
 import time
 import simpleaudio as sa
 import mido
