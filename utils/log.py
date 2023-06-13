@@ -4,11 +4,11 @@ from threading import Lock
 class Log:
     _lock = Lock()
     
-    LEVEL_DBG = 3
-    LEVEL_INF = 2
-    LEVEL_WRN = 1
-    LEVEL_ERR = 0
-    LEVEL_IMP = -1
+    LEVEL_DBG = 3   # debug
+    LEVEL_INF = 2   # info
+    LEVEL_WRN = 1   # warning
+    LEVEL_ERR = 0   # error
+    LEVEL_IMP = -1  # important
 
     _LEVEL_COLORS = [Fore.RED, Fore.YELLOW, Fore.GREEN, Fore.WHITE, Fore.CYAN]
     _LEVEL_PREFIXES = ['ERR', 'WRN', 'INF', 'DBG', 'IMP']
