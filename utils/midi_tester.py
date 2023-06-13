@@ -1,12 +1,17 @@
+# standard lib
 import threading
-import midi
-from pynput import keyboard
-from utils.log import Log
 import time
-import simpleaudio as sa
-import mido
 from enum import Enum
 import os
+
+# packages
+from pynput import keyboard
+import simpleaudio as sa
+import mido
+
+# local
+import midi
+from utils.log import Log
 
 log = Log(Log.LEVEL_INF, 'midi_tester')
 
