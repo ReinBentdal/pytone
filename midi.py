@@ -76,6 +76,7 @@ class Module:
     """Sends a midi note event further in processing chain"""
     log.dbg(f'Sending event: {note}')
     
+    assert self.send_fn is not None, 'send_fn is not set'
     self.send_fn(note)
     
   def _yield_control(self):
