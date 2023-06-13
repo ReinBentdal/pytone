@@ -14,11 +14,11 @@ class Note:
     self.note = note
     self.velocity = velocity
     self.channel = channel
-    self.state = state
-    
-    self.pressed = self.state == State.NOTE_ON
-    
-    log.dbg(f'Creating Note: self')
+    self.state = state    
+    log.dbg(f'Creating Note: {self}')
+
+  @property
+  def pressed(self): return self.state == State.NOTE_ON
 
   def __eq__(self, other):
     if not isinstance(other, Note):
@@ -37,7 +37,7 @@ class Note:
     return f'Note: {self.note}, velocity: {self.velocity}, channel: {self.channel}, {self.state}'
 
 class Module:
-  """Base class for midi scetches"""
+  """Base class for midi modules"""
   def __init__(self):
     self.send_fn = None
 
@@ -56,7 +56,7 @@ class Module:
   def btn(self, n, event):
     """Processes button events"""
     if event == 'back':
-      self.yield_control()
+      self._yield_control()
       return True
     elif event == 'clear':
       self.reset()
@@ -77,3 +77,7 @@ class Module:
     log.dbg(f'Sending event: {note}')
     
     self.send_fn(note)
+    
+  def _yield_control(self):
+    """Gives back interface control to the module which gave it control"""
+    pass
