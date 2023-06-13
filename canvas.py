@@ -1,4 +1,4 @@
-from log import Log
+from utils.log import Log
 
 log = Log(Log.LEVEL_INF, name='canvas')
 
