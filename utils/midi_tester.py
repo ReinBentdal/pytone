@@ -68,7 +68,7 @@ class TesterOutput(Enum):
 
 class Tester:
     
-    def __init__(self, module: midi.Module, bpm=120, out=TesterOutput.AUDIO, keyboard_layout=keyboard_layout_no):
+    def __init__(self, module: midi.Module, bpm=120, out=TesterOutput.AUDIO, keyboard_layout=keyboard_layout_no, soundbank='SalamanderGrandPianoV3'):
         
         self.out = out
         self.module = module
@@ -84,7 +84,7 @@ class Tester:
         elif out == TesterOutput.AUDIO:
             self.module.send_fn = lambda note: self.play_audio(note)
             self.audio_playing = {}
-            self.audio_notes = {int(fname[4:7]): sa.WaveObject.from_wave_file(f"keys/{fname}") for fname in os.listdir('keys/') if fname.endswith('.wav')}
+            self.audio_notes = {int(fname[4:7]): sa.WaveObject.from_wave_file(f"soundbanks/{soundbank}/lib/{fname}") for fname in os.listdir(f"soundbanks/{soundbank}/lib/") if fname.endswith('.wav')}
             log.dbg(self.audio_notes)
         else:
             raise Exception(f'Unknown mode {out}')
