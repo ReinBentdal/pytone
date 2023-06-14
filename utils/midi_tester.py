@@ -84,7 +84,7 @@ class Tester:
         elif out == TesterOutput.AUDIO:
             self.module.send_fn = lambda note: self.play_audio(note)
             self.audio_playing = {}
-            self.audio_notes = {int(fname[4:7]): sa.WaveObject.from_wave_file(f"soundbanks/{soundbank}/lib/{fname}") for fname in os.listdir(f"soundbanks/{soundbank}/lib/") if fname.endswith('.wav')}
+            self.audio_notes = {int(fname[4:7]): sa.WaveObject.from_wave_file(f"soundbanks/{soundbank}/samples/{fname}") for fname in os.listdir(f"soundbanks/{soundbank}/samples/") if fname.endswith('.wav')}
             log.dbg(self.audio_notes)
         else:
             raise Exception(f'Unknown mode {out}')
