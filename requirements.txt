@@ -1,0 +1,5 @@
+colorama
+simpleaudio
+python-rtmidi
+mido
+pynput
