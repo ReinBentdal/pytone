@@ -62,7 +62,6 @@ class Arpeggio(midi.Module):
     def redraw(self):
         canvas.write(f"*ARP:1/{self.ticks_per_note}")
 
-
-# midi_tester.log.set_level(midi_tester.log.LEVEL_DBG)
-t = Tester(Arpeggio(), bpm=120, out=TesterOutput.MIDI)
-t.start()
+if __name__ == '__main__':
+    t = Tester(Arpeggio(), bpm=120, out=TesterOutput.MIDI)
+    t.start()

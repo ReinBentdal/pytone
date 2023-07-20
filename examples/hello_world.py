@@ -13,6 +13,7 @@ class Hello(midi.Module):
         # write 'Hello' to the display
         canvas.write(f'Hello {note if note != None else ""}')
 
-
-t = Tester(Hello(), out=TesterOutput.AUDIO)
-t.start()
+if __name__ == '__main__':
+    # test the module
+    t = Tester(Hello(), out=TesterOutput.AUDIO)
+    t.start()
