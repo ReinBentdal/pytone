@@ -6,9 +6,9 @@ with open("README.md", "r", encoding="utf-8") as fh:
 setuptools.setup(
     name="pytone",
     version="0.0.1",
-    author="Rein Bentdal",
+    author="Rein Gundersen Bentdal",
     author_email="rein.bent@gmail.com",
-    description="Functions and scripts to demonstrate Python development tips.",
+    description="MIDI processing environment in Python",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/ReinBentdal/pytone",
