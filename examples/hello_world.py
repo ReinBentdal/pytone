@@ -2,16 +2,14 @@ import pytone.midi as midi
 from pytone.utils.midi_tester import Tester, TesterOutput
 import pytone.canvas as canvas
 
-
 class Hello(midi.Module):
     def note(self, event: midi.Note):
         self.send(event)  # just pass event further
+        self.redraw()
 
-        self.redraw(note=event.note)
-
-    def redraw(self, note=None):
+    def redraw(self):
         # write 'Hello' to the display
-        canvas.write(f'Hello {note if note != None else ""}')
+        canvas.write('Hello')
 
 if __name__ == '__main__':
     # test the module
